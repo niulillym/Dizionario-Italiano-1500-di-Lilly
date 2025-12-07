@@ -1,0 +1,72 @@
+[
+  {
+    "word": "ciao",
+    "it": "saluto informale",
+    "zh": "你好；嗨",
+    "en": "hello; hi",
+    "example": "Ciao, come stai?"
+  },
+  {
+    "word": "grazie",
+    "it": "espressione di ringraziamento",
+    "zh": "谢谢",
+    "en": "thank you",
+    "example": "Grazie per il tuo aiuto."
+  },
+  {
+    "word": "scusa",
+    "it": "richiesta di perdono",
+    "zh": "对不起；劳驾",
+    "en": "excuse me; sorry",
+    "example": "Scusa, puoi ripetere?"
+  },
+  {
+    "word": "per favore",
+    "it": "richiesta cortese",
+    "zh": "请；麻烦",
+    "en": "please",
+    "example": "Passami il sale, per favore."
+  },
+  {
+    "word": "acqua",
+    "it": "liquido essenziale per la vita",
+    "zh": "水",
+    "en": "water",
+    "example": "Vorrei un bicchiere d’acqua."
+  },
+  {
+    "word": "prego",
+    "it": "risposta a grazie",
+    "zh": "不客气",
+    "en": "you're welcome",
+    "example": "—Grazie! —Prego!"
+  },
+  {
+    "word": "dove",
+    "it": "richiesta di posizione",
+    "zh": "哪里",
+    "en": "where",
+    "example": "Dove è la stazione?"
+  },
+  {
+    "word": "oggi",
+    "it": "il giorno presente",
+    "zh": "今天",
+    "en": "today",
+    "example": "Oggi fa molto freddo."
+  },
+  {
+    "word": "domani",
+    "it": "il giorno dopo oggi",
+    "zh": "明天",
+    "en": "tomorrow",
+    "example": "Domani vado a Roma."
+  },
+  {
+    "word": "capire",
+    "it": "comprendere qualcosa",
+    "zh": "理解；明白",
+    "en": "to understand",
+    "example": "Non capisco quello che dici."
+  }
+]
