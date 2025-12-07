@@ -1,50 +1,76 @@
-<!DOCTYPE html>
-<html lang="it">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dizionario Italiano 1500 di Lilly</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dizionario Italiano 1500 di Lilly</title>
+  <meta name="theme-color" content="#008C45" />
+  <link rel="icon" href="icon.png">
 
-    <!-- Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Icon -->
-    <link rel="icon" href="assets/icon-512.png">
-
-    <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--accent:#008C45;--danger:#c33;--bg:#fafafa;--card:#fff;--muted:#666}
+    *{box-sizing:border-box}html,body{height:100%;margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#111}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:linear-gradient(90deg,#0f8c3f,#fff 40%,#d83a2c);color:#111}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:44px;height:44px;border-radius:9px;object-fit:cover}
+    .title{font-size:16px;font-weight:700}
+    .controls{display:flex;gap:8px}
+    .btn{background:#fff;border-radius:8px;padding:8px 10px;border:0;cursor:pointer;font-weight:600}
+    .btn.small{padding:6px 8px;font-size:13px}
+    .btn.danger{background:var(--danger);color:#fff}
+    .container{padding:12px;max-width:980px;margin:0 auto}
+    .top-search{display:flex;gap:8px;margin-bottom:12px}
+    .top-search input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+    .layout{display:flex;flex-direction:column;gap:12px}
+    @media(min-width:900px){.layout{flex-direction:row}}
+    .left{flex:0 0 340px}
+    .right{flex:1}
+    .card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+    .word-list{list-style:none;padding:0;margin:0;max-height:60vh;overflow:auto}
+    .word-list li{padding:10px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .word-list li:hover{background:#fbfbfb}
+    .word-title{font-size:28px;margin:0 0 8px 0;font-weight:800}
+    .defs p{margin:6px 0;font-weight:600}
+    .example{margin-top:10px;color:var(--muted)}
+    .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .small-muted{color:var(--muted);font-size:13px}
+    .hidden{display:none}
+    .footer{padding:16px;text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+    .tag{background:#f3f3f3;padding:4px 8px;border-radius:8px;font-size:13px}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="icon.png" alt="logo"/>
+      <div>
+        <div class="title">Dizionario Italiano 1500 di Lilly</div>
+        <div class="small-muted">意大利语 1500 词 — 简洁版</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="dailyBtn" class="btn small">每日25词</button>
+      <button id="randomBtn" class="btn small">随机</button>
+      <button id="reviewBtn" class="btn small">错题复习</button>
+    </div>
+  </header>
 
-    <header>
-        <h1>Dizionario Italiano 1500 di Lilly</h1>
-        <button id="review-btn">🔁 错题复习</button>
-    </header>
+  <main class="container">
+    <div id="view-home">
+      <div class="top-search">
+        <input id="q" placeholder="搜索意大利语单词或中文..." />
+        <button id="searchBtn" class="btn">搜索</button>
+      </div>
 
-    <main>
+      <div class="layout">
+        <div class="left">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <h3 style="margin:0">词表</h3>
+              <div class="small-muted">共 <span id="total-count">0</span> 个</div>
+            </div>
 
-        <section id="word-section">
-            <h2 id="word-title">Caricamento...</h2>
-
-            <p id="definition-it"></p>
-            <p id="definition-zh"></p>
-            <p id="definition-en"></p>
-
-            <p><strong>例句：</strong></p>
-            <p id="example-sentence"></p>
-
-            <button id="mark-wrong-btn">❌ 加入错题本</button>
-        </section>
-
-        <section id="controls">
-            <button id="prev-btn">⬅️ 上一个</button>
-            <button id="next-btn">➡️ 下一个</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>© Lilly • Italiano 1500</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            <div id="list-controls" style="margin-bottom:8px">
+              <label><select id="theme-select"><option value="all">全部主题</option></select></label>
+              <button id="show-all-btn" class="btn small
